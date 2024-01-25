@@ -98,14 +98,14 @@ if uploaded_file is not None:
         # save file
         filename = f"{secrets.token_hex(8)}.{file_type}"
 
-        directory = "./images"
-        if not os.path.exists(directory):
-            os.makedirs(directory)
+        # directory = "./images"
+        # if not os.path.exists(directory):
+        #    os.makedirs(directory)
         
-        with open(f"./images/{filename}", "wb") as fp:
+        with open(f"./{filename}", "wb") as fp: # f"./images/{filename}"
             fp.write(byte_data)
 
-        file_path = f"./images/{filename}"
+        file_path = f"./{filename}" # f"./images/{filename}"
 
         # load images
         image_documents = SimpleDirectoryReader(
