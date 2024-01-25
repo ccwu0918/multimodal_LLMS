@@ -11,7 +11,7 @@ from decouple import config
 import pandas as pd
 
 import streamlit as st
-
+import os
 GOOGLE_API_KEY = config("GOOGLE_API_KEY")
 MODEL_NAME = "models/gemini-pro-vision"
 
@@ -98,6 +98,10 @@ if uploaded_file is not None:
         # save file
         filename = f"{secrets.token_hex(8)}.{file_type}"
 
+        directory = "./images"
+        if not os.path.exists(directory):
+        os.makedirs(directory)
+        
         with open(f"./images/{filename}", "wb") as fp:
             fp.write(byte_data)
 
