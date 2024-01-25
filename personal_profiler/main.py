@@ -100,7 +100,7 @@ if uploaded_file is not None:
 
         directory = "./images"
         if not os.path.exists(directory):
-        os.makedirs(directory)
+            os.makedirs(directory)
         
         with open(f"./images/{filename}", "wb") as fp:
             fp.write(byte_data)
